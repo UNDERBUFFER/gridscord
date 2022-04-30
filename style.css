@@ -1,0 +1,161 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0%;
+    background-color: rgb(54, 57, 63);
+}
+
+* {
+    box-sizing: border-box;
+    color: rgb(173, 170, 170);
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    "sl com hd hd"
+    "sl com mn ac";
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 70px 240px 2.3fr 1fr;
+}
+
+.container > div {
+    border: 1px solid blue;
+}
+
+.servers-list {
+    grid-area: sl;
+    background-color: rgb(33, 34, 38);
+    display: grid;
+    grid-template-columns: 50px;
+    grid-template-rows: repeat(8, 50px);
+    row-gap: 15px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.servers-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.servers-list div {
+    margin-left: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.servers-list img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    transition: 0.3s;
+}
+
+.servers-list img:hover {
+    border-radius: 25%;
+}
+
+.logo-image {
+    margin-top: 5px;
+}
+
+.logo-image img {
+    border-radius: 25%;
+}
+
+.control-image {
+    transition: 0.3s;
+}
+
+.control-image img {
+    background-color: rgb(54, 57, 63);
+}
+
+.control-image:hover {
+    border-radius: 25%;
+    background-color: rgb(82, 242, 127);
+}
+
+.control-image:hover img {
+    background-color: transparent;
+    filter: grayscale(100%);
+}
+
+.communication {
+    grid-area: com;
+    background-color: rgb(48, 49, 54);
+}
+
+.find-people {
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid rgb(33, 34, 38);
+    position: relative;
+    overflow: auto;
+}
+
+.find-people div {
+    text-indent: 10px;
+    background-color: rgb(33, 34, 38);
+    width: 90%;
+    margin-left: 5%;
+    font-size: 14px;
+    height: 50%;
+    line-height: 25px;
+    margin-top: calc(50px / 4);
+}
+
+.friends-nitro {
+    height: calc(50px * 2 + 50px / 2);
+    width: 100%;
+    border: 1px solid red;
+}
+
+.friends-nitro div {
+    height: 50px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.friends-nitro div:first-child {
+    margin-top: calc(50px / 4);
+    background-color: rgb(73, 75, 86);
+}
+
+.friends-nitro img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5%;
+    margin-top: calc(50px / 4);
+}
+
+.friends-nitro span {
+    font-size: 18px;
+    margin-left: 7%;
+    height: 20px;
+    vertical-align: top;
+    margin-top: 12px;
+    display: inline-block;
+}
+
+.friends-nitro div:first-child span {
+    color: white;
+}
+
+.header {
+    grid-area: hd;
+}
+
+.main {
+    grid-area: mn;
+}
+
+.active-contacts {
+    grid-area: ac;
+}
